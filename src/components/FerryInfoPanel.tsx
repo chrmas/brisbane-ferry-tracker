@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Ferry } from '@types/ferry';
+import type { Ferry } from '../types/ferry';
 
 interface FerryInfoPanelProps {
   ferry: Ferry;

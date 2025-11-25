@@ -1,11 +1,11 @@
-import { Ferry } from '@types/ferry';
-import { Terminal } from '@types/terminal';
-import { ETAResult } from '@types/eta';
-import { GTFSData, StopTime, Stop } from '@types/gtfs';
-import { GTFSRTTripUpdate } from '@types/api';
-import { haversineDistance, calculateBearing } from '@utils/mapUtils';
-import { formatArrivalTime, gtfsTimeToTimestamp } from '@utils/formatTime';
-import { AVERAGE_DELAY_MS } from '@utils/constants';
+import type { Ferry } from '../types/ferry';
+import type { Terminal } from '../types/terminal';
+import type { ETAResult } from '../types/eta';
+import type { GTFSData, StopTime, Stop } from '../types/gtfs';
+import type { GTFSRTTripUpdate } from '../types/api';
+import { haversineDistance, calculateBearing } from '../utils/mapUtils';
+import { formatArrivalTime, gtfsTimeToTimestamp } from '../utils/formatTime';
+import { AVERAGE_DELAY_MS } from '../utils/constants';
 
 export class ETACalculator {
   private gtfsData: GTFSData | null = null;
@@ -144,8 +144,8 @@ export class ETACalculator {
    * Fallback ETA calculation using scheduled time + average delay
    */
   private fallbackScheduledETA(
-    ferry: Ferry,
-    terminal: Terminal,
+    _ferry: Ferry,
+    _terminal: Terminal,
     stopTime?: StopTime
   ): ETAResult {
     if (!stopTime) {

@@ -2,10 +2,10 @@ import { useEffect, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { Ferry } from '@types/ferry';
-import { Terminal } from '@types/terminal';
-import { FilterType } from '@types/ui';
-import { DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM, COLORS } from '@utils/constants';
+import type { Ferry } from '../types/ferry';
+import type { Terminal } from '../types/terminal';
+import type { FilterType } from '../types/ui';
+import { DEFAULT_MAP_CENTER, DEFAULT_MAP_ZOOM, COLORS } from '../utils/constants';
 
 // Fix Leaflet default icon issue with Vite
 delete (L.Icon.Default.prototype as any)._getIconUrl;

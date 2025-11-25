@@ -1,14 +1,14 @@
 import GtfsRealtimeBindings from 'gtfs-realtime-bindings';
-import { Ferry, ServiceType } from '@types/ferry';
-import { GTFSRTVehiclePosition, GTFSRTTripUpdate } from '@types/api';
+import type { Ferry, ServiceType } from '../types/ferry';
+import type { GTFSRTTripUpdate } from '../types/api';
 import {
   GTFS_RT_VEHICLE_POSITIONS_URL,
   GTFS_RT_TRIP_UPDATES_URL,
   API_TIMEOUT,
   MAX_RETRIES,
   FERRY_POSITION_POLL_INTERVAL,
-} from '@utils/constants';
-import { isValidFerry } from '@utils/validation';
+} from '../utils/constants';
+import { isValidFerry } from '../utils/validation';
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -97,14 +97,14 @@ export class GTFSRTService {
                 stopId: stu.stopId || '',
                 arrival: stu.arrival
                   ? {
-                      delay: stu.arrival.delay,
-                      time: stu.arrival.time?.toNumber(),
+                      delay: stu.arrival.delay ?? undefined,
+                      time: stu.arrival.time?.toNumber() ?? undefined,
                     }
                   : undefined,
                 departure: stu.departure
                   ? {
-                      delay: stu.departure.delay,
-                      time: stu.departure.time?.toNumber(),
+                      delay: stu.departure.delay ?? undefined,
+                      time: stu.departure.time?.toNumber() ?? undefined,
                     }
                   : undefined,
               })),

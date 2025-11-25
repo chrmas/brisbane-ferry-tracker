@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import clsx from 'clsx';
-import { Ferry } from '@types/ferry';
-import { Terminal } from '@types/terminal';
-import { ETAResult } from '@types/eta';
+import type { Ferry } from '../types/ferry';
+import type { Terminal } from '../types/terminal';
+import type { ETAResult } from '../types/eta';
 
 interface ETAModalProps {
   ferry: Ferry;

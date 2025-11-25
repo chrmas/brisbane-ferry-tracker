@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { FilterType } from '@types/ui';
+import type { FilterType } from '../types/ui';
 
 interface ServiceFilterProps {
   filterService: FilterType;
